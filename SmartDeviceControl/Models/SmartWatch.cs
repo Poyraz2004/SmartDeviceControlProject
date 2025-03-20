@@ -30,13 +30,13 @@ public class SmartWatch : Device, IPowerNotifier
 
     public override void TurnOn()
     {
-        // If battery is less than 11%, throw EmptyBatteryException
+        
         if (BatteryPercentage < 11)
         {
-            throw new EmptyBatteryException();  // Throwing the exception
+            throw new EmptyBatteryException();  
         }
 
-        // If operation is successful, reduce battery by 10%
+       
         Console.WriteLine($"{Name} is turning on...");
         batteryPercentage -= 10;
         

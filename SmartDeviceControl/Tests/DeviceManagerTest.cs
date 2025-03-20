@@ -16,7 +16,7 @@ namespace SmartDeviceControl.Tests
         [SetUp]
         public void Setup()
         {
-            testFilePath = "input.txt"; // Test dosyasını input.txt olarak ayarladık
+            testFilePath = "input.txt"; 
             File.WriteAllLines(testFilePath, new[]
             {
                 "SW-1,Apple Watch SE2,true,27%",
