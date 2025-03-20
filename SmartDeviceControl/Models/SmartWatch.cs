@@ -9,18 +9,17 @@ public class SmartWatch : Device, IPowerNotifier
 
     public int BatteryPercentage
     {
-        get => BatteryPercentage;
+        get => batteryPercentage;
         set
         {
             if (value < 0 || value > 100)
             {
                 throw new ArgumentException("Battery percentage must be between 0 and 100.");
             }
-            BatteryPercentage = value;
+            batteryPercentage = value;
 
-            if (BatteryPercentage < 20)
+            if (batteryPercentage < 20)
                 NotifyLowBattery();
-            
         }
     }
 
@@ -31,13 +30,17 @@ public class SmartWatch : Device, IPowerNotifier
 
     public override void TurnOn()
     {
+        // If battery is less than 11%, throw EmptyBatteryException
         if (BatteryPercentage < 11)
         {
-            Console.WriteLine($"{Name} battery is too low.");
-
-            batteryPercentage -= 10;
-            base.TurnOn();
+            throw new EmptyBatteryException();  // Throwing the exception
         }
+
+        // If operation is successful, reduce battery by 10%
+        Console.WriteLine($"{Name} is turning on...");
+        batteryPercentage -= 10;
+        
+        base.TurnOn();
     }
 
     public void NotifyLowBattery()

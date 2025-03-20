@@ -1,6 +1,9 @@
-namespace SmartDeviceControl.Exceptions;
+using System;
 
-public class InvalidDataException
+namespace SmartDeviceControl.Exceptions
 {
-    
+    public class InvalidDataException : Exception
+    {
+        public InvalidDataException(string message) : base(message) { }
+    }
 }
