@@ -7,7 +7,7 @@ namespace SmartDeviceControl.Models
     public class PersonalComputer : Device
     {
         public string IpAddress { get; private set; }
-        public string OperatingSystem { get; private set; }  // Added Operating System
+        public string OperatingSystem { get; private set; }
 
         public PersonalComputer(string id, string name, string ipAddress, string operatingSystem = null) : base(id, name)
         {
@@ -20,15 +20,13 @@ namespace SmartDeviceControl.Models
 
         public override void TurnOn()
         {
-            // If Operating System is not specified, throw EmptySystemException
             if (string.IsNullOrEmpty(OperatingSystem))
-                throw new EmptySystemException();  // Throwing the exception
+                throw new EmptySystemException();
 
             Console.WriteLine($"{Name} is turning on...");
 
             if (string.IsNullOrEmpty(IpAddress))
                 throw new SmartDeviceControl.Exceptions.InvalidDataException($"Connection error: IP address is not defined.");
-
 
             base.TurnOn();
         }

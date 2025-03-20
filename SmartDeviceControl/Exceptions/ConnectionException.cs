@@ -1,6 +1,9 @@
-namespace SmartDeviceControl.Exceptions;
+using System;
 
-public class ConnectionException
+namespace SmartDeviceControl.Exceptions
 {
-    
+    public class ConnectionException : Exception
+    {
+        public ConnectionException(string message) : base(message) { }
+    }
 }

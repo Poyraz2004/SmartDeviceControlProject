@@ -27,6 +27,6 @@ public class Device
 
     public override string ToString()
     {
-        return $"{Id}, {Name}, Durum: {(IsOn ? "Open" : "Close")}";
+        return $"{Id}, {Name}, Status: {(IsOn ? "Open" : "Close")}";
     }
 }
