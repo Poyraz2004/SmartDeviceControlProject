@@ -1,0 +1,16 @@
+
+.idea/
+.vscode/
+
+bin/
+obj/
+
+*.dll
+*.exe
+*.pdb
+
+*.user
+*.suo
+*.vs
+
+*.log
