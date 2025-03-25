@@ -9,7 +9,7 @@ namespace SmartDeviceControl.Models
         private string ipAddress;
         private string networkName;
 
-        // IP Address Property
+        
         public string IpAddress
         {
             get => ipAddress;
@@ -59,7 +59,7 @@ namespace SmartDeviceControl.Models
            
             Connect();
 
-            Console.WriteLine($"{Name} is turning on...");
+            Console.WriteLine($"{Name} is turning on");
 
             base.TurnOn();
         }

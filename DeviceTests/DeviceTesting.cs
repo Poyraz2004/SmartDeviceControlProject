@@ -5,11 +5,12 @@ using NUnit.Framework.Legacy;
 using SmartDeviceControl.Managers;
 using SmartDeviceControl.Models;
 using SmartDeviceControl.Exceptions;
+using Assert = NUnit.Framework;
 
 namespace SmartDeviceControl.Tests
 {
     [TestFixture]
-    public class DeviceManagerTest
+    public class DeviceTesting
     {
         private string testFilePath;
         private DeviceManager deviceManager;

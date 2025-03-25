@@ -19,7 +19,7 @@ public class Device
         Console.WriteLine($"{Name} is on");
     }
 
-    public virtual void TurnOff()
+    public void TurnOff()
     {
         IsOn = false;
         Console.WriteLine($"{Name} is off");

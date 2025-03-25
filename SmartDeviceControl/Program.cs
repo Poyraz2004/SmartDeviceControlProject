@@ -1,6 +1,7 @@
 using System;
 using SmartDeviceControl.Managers;
 using SmartDeviceControl.Models;
+using SmartDeviceControl.Exceptions;
 
 class Program
 {
@@ -9,33 +10,58 @@ class Program
         string filePath = "input.txt";
         DeviceManager deviceManager = new DeviceManager(filePath);
 
-        Console.WriteLine(" Listing all devices from input.txt...");
+        Console.WriteLine("Listing all devices from input.txt...");
         deviceManager.ShowAllDevices();
 
-        Console.WriteLine("\n Adding a new device (SW-2, Galaxy Watch, 45%)...");
+        
+        Console.WriteLine("\nAdding a new device (SW-2, Galaxy Watch, 45%)...");
         SmartWatch newWatch = new SmartWatch("Galaxy Watch", "SW-2", 45);
         deviceManager.AddDevice(newWatch);
         deviceManager.ShowAllDevices();
 
-        Console.WriteLine("\n Removing a device (P-1, LinuxPC)...");
+        
+        Console.WriteLine("\nRemoving a device (P-1, LinuxPC)...");
         deviceManager.RemoveDevice("P-1");
         deviceManager.ShowAllDevices();
 
-        Console.WriteLine("\n Updating device name (P-2 -> Workstation-T440)...");
+        
+        Console.WriteLine("\nUpdating device name (P-2 -> Workstation-T440)...");
         deviceManager.EditDevice("P-2", "Workstation-T440");
         deviceManager.ShowAllDevices();
 
-        Console.WriteLine("\n Turning on a device (ED-1, Pi3)...");
-        deviceManager.TurnOnDevice("ED-1");
+        
+        Console.WriteLine("\nTurning on a device (SW-2, Galaxy Watch)");
+        try
+        {
+            deviceManager.TurnOnDevice("SW-2");  
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+        }
         deviceManager.ShowAllDevices();
 
-        Console.WriteLine("\n Turning off a device (SW-1, Apple Watch SE2)...");
+        
+        Console.WriteLine("\nTurning on a device (ED-1, Pi3)");
+        try
+        {
+            deviceManager.TurnOnDevice("ED-1");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+        }
+        deviceManager.ShowAllDevices();
+
+        
+        Console.WriteLine("\nTurning off a device (SW-1, Apple Watch SE2)");
         deviceManager.TurnOffDevice("SW-1");
         deviceManager.ShowAllDevices();
 
-        Console.WriteLine("\n Saving updated data back to input.txt...");
+        
+        Console.WriteLine("\nSaving updated data back to input.txt");
         deviceManager.SaveDataToFile();
 
-        Console.WriteLine("\n Program execution completed!");
+        Console.WriteLine("\nProgram execution completed!");
     }
 }

@@ -131,14 +131,38 @@ namespace SmartDeviceControl.Managers
         public void TurnOnDevice(string id)
         {
             var device = devices.FirstOrDefault(d => d.Id == id);
-            device?.TurnOn();
+            if (device != null)
+            {
+                try
+                {
+                    device.TurnOn();  
+                    Console.WriteLine($"{device.Name} is now turned on.");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error turning on device {id}: {ex.Message}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Device not found.");
+            }
         }
 
         public void TurnOffDevice(string id)
         {
             var device = devices.FirstOrDefault(d => d.Id == id);
-            device?.TurnOff();
+            if (device != null)
+            {
+                device.TurnOff();  
+                Console.WriteLine($"{device.Name} is now turned off.");
+            }
+            else
+            {
+                Console.WriteLine("Device not found.");
+            }
         }
+
 
         public void ShowAllDevices()
         {
