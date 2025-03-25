@@ -1,7 +1,5 @@
-using System;
 using SmartDeviceControl.Managers;
 using SmartDeviceControl.Models;
-using SmartDeviceControl.Exceptions;
 
 class Program
 {
@@ -13,23 +11,19 @@ class Program
         Console.WriteLine("Listing all devices from input.txt...");
         deviceManager.ShowAllDevices();
 
-        
         Console.WriteLine("\nAdding a new device (SW-2, Galaxy Watch, 45%)...");
         SmartWatch newWatch = new SmartWatch("Galaxy Watch", "SW-2", 45);
         deviceManager.AddDevice(newWatch);
         deviceManager.ShowAllDevices();
 
-        
         Console.WriteLine("\nRemoving a device (P-1, LinuxPC)...");
         deviceManager.RemoveDevice("P-1");
         deviceManager.ShowAllDevices();
 
-        
         Console.WriteLine("\nUpdating device name (P-2 -> Workstation-T440)...");
         deviceManager.EditDevice("P-2", "Workstation-T440");
         deviceManager.ShowAllDevices();
 
-        
         Console.WriteLine("\nTurning on a device (SW-2, Galaxy Watch)");
         try
         {
@@ -41,7 +35,6 @@ class Program
         }
         deviceManager.ShowAllDevices();
 
-        
         Console.WriteLine("\nTurning on a device (ED-1, Pi3)");
         try
         {
@@ -53,12 +46,10 @@ class Program
         }
         deviceManager.ShowAllDevices();
 
-        
         Console.WriteLine("\nTurning off a device (SW-1, Apple Watch SE2)");
         deviceManager.TurnOffDevice("SW-1");
         deviceManager.ShowAllDevices();
 
-        
         Console.WriteLine("\nSaving updated data back to input.txt");
         deviceManager.SaveDataToFile();
 

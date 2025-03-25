@@ -1,6 +1,7 @@
-using SmartDeviceControl.Exceptions;
 using System;
+using SmartDeviceControl.Exceptions;
 using System.Text.RegularExpressions;
+using InvalidDataException = SmartDeviceControl.Exceptions.InvalidDataException;
 
 namespace SmartDeviceControl.Models
 {
@@ -12,7 +13,7 @@ namespace SmartDeviceControl.Models
         public PersonalComputer(string id, string name, string ipAddress, string operatingSystem = null) : base(id, name)
         {
             if (!IsValidIpAddress(ipAddress))
-                throw new SmartDeviceControl.Exceptions.InvalidDataException($"Invalid IP address: {ipAddress}");
+                throw new InvalidDataException($"Invalid IP address: {ipAddress}");
 
             IpAddress = ipAddress;
             OperatingSystem = operatingSystem;
@@ -26,7 +27,7 @@ namespace SmartDeviceControl.Models
             Console.WriteLine($"{Name} is turning on...");
 
             if (string.IsNullOrEmpty(IpAddress))
-                throw new SmartDeviceControl.Exceptions.InvalidDataException($"Connection error: IP address is not defined.");
+                throw new InvalidDataException($"Connection error: IP address is not defined.");
 
             base.TurnOn();
         }

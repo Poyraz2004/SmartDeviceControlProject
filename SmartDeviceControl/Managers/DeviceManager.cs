@@ -1,42 +1,39 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using SmartDeviceControl.Models;
-using SmartDeviceControl.Exceptions;
 
-namespace SmartDeviceControl.Managers
+namespace SmartDeviceControl.Managers  
 {
     public class DeviceManager
     {
         private const int MaxDevices = 15;
-        private List<Device> devices;
-        private readonly string filePath;
+        private List<Device> _devices; 
+        private readonly string _filePath;
 
         public DeviceManager(string filePath)
         {
-            this.filePath = filePath;
-            devices = new List<Device>();
+            _filePath = filePath;
+            _devices = new List<Device>();
             LoadDevices();
         }
 
+        /// <summary>
+        /// Loads devices from the file and adds them to the devices list.
+        /// </summary>
         private void LoadDevices()
         {
-            if (!File.Exists(filePath))
+            if (!File.Exists(_filePath))
             {
                 Console.WriteLine("File not found!");
                 return;
             }
 
-            var lines = File.ReadAllLines(filePath);
+            var lines = File.ReadAllLines(_filePath);
             foreach (var line in lines)
             {
                 try
                 {
-                    var device = ParseDevice(line);
-                    if (device != null && devices.Count < MaxDevices)
+                    var device = DeviceFactory.CreateDevice(line);  // DeviceFactory kullanımı
+                    if (device != null && _devices.Count < MaxDevices)
                     {
-                        devices.Add(device);
+                        _devices.Add(device);
                     }
                 }
                 catch (Exception ex)
@@ -46,66 +43,31 @@ namespace SmartDeviceControl.Managers
             }
         }
 
-        private Device ParseDevice(string line)
-        {
-            var parts = line.Split(',');
-            if (parts.Length < 3) return null;
-
-            string id = parts[0];
-            string name = parts[1];
-
-            if (!bool.TryParse(parts[2], out bool isOn))
-                return null;
-
-            if (id.StartsWith("SW"))
-            {
-                if (parts.Length < 4 || !int.TryParse(parts[3].Trim('%'), out int battery))
-                    return null;
-
-                var watch = new SmartWatch(name, id, battery);
-                if (isOn) watch.TurnOn();
-                return watch;
-            }
-            else if (id.StartsWith("P"))
-            {
-                string os = parts.Length > 3 ? parts[3] : null;
-                var pc = new PersonalComputer(id, name, "127.0.0.1", os);
-                if (isOn) pc.TurnOn();
-                return pc;
-            }
-            else if (id.StartsWith("ED"))
-            {
-                if (parts.Length < 4)
-                    return null;
-
-                string ipAddress = parts[2];
-                string networkName = parts[3];
-
-                var embeddedDevice = new EmbeddedDevice(id, name, ipAddress, networkName);
-                if (isOn) embeddedDevice.TurnOn();
-                return embeddedDevice;
-            }
-
-            return null;
-        }
-
+        /// <summary>
+        /// Adds a new device to the devices list.
+        /// </summary>
+        /// <param name="device">The device to be added.</param>
         public void AddDevice(Device device)
         {
-            if (devices.Count >= MaxDevices)
+            if (_devices.Count >= MaxDevices)
             {
                 Console.WriteLine("Device storage is full.");
                 return;
             }
-            devices.Add(device);
+            _devices.Add(device);
             Console.WriteLine($"{device.Name} added.");
         }
 
+        /// <summary>
+        /// Removes a device from the devices list by its ID.
+        /// </summary>
+        /// <param name="id">The ID of the device to remove.</param>
         public void RemoveDevice(string id)
         {
-            var device = devices.FirstOrDefault(d => d.Id == id);
+            var device = _devices.FirstOrDefault(d => d.Id == id);
             if (device != null)
             {
-                devices.Remove(device);
+                _devices.Remove(device);
                 Console.WriteLine($"{device.Name} removed.");
             }
             else
@@ -114,9 +76,14 @@ namespace SmartDeviceControl.Managers
             }
         }
 
+        /// <summary>
+        /// Edits a device's name by its ID.
+        /// </summary>
+        /// <param name="id">The ID of the device to edit.</param>
+        /// <param name="newName">The new name of the device.</param>
         public void EditDevice(string id, string newName)
         {
-            var device = devices.FirstOrDefault(d => d.Id == id);
+            var device = _devices.FirstOrDefault(d => d.Id == id);
             if (device != null)
             {
                 device.Name = newName;
@@ -128,14 +95,18 @@ namespace SmartDeviceControl.Managers
             }
         }
 
+        /// <summary>
+        /// Turns on a device by its ID.
+        /// </summary>
+        /// <param name="id">The ID of the device to turn on.</param>
         public void TurnOnDevice(string id)
         {
-            var device = devices.FirstOrDefault(d => d.Id == id);
+            var device = _devices.FirstOrDefault(d => d.Id == id);
             if (device != null)
             {
                 try
                 {
-                    device.TurnOn();  
+                    device.TurnOn();
                     Console.WriteLine($"{device.Name} is now turned on.");
                 }
                 catch (Exception ex)
@@ -149,12 +120,16 @@ namespace SmartDeviceControl.Managers
             }
         }
 
+        /// <summary>
+        /// Turns off a device by its ID.
+        /// </summary>
+        /// <param name="id">The ID of the device to turn off.</param>
         public void TurnOffDevice(string id)
         {
-            var device = devices.FirstOrDefault(d => d.Id == id);
+            var device = _devices.FirstOrDefault(d => d.Id == id);
             if (device != null)
             {
-                device.TurnOff();  
+                device.TurnOff();
                 Console.WriteLine($"{device.Name} is now turned off.");
             }
             else
@@ -163,21 +138,26 @@ namespace SmartDeviceControl.Managers
             }
         }
 
-
+        /// <summary>
+        /// Displays all devices in the list.
+        /// </summary>
         public void ShowAllDevices()
         {
-            foreach (var device in devices)
+            foreach (var device in _devices)
             {
                 Console.WriteLine(device);
             }
         }
 
+        /// <summary>
+        /// Saves the device data back to the file.
+        /// </summary>
         public void SaveDataToFile()
         {
             try
             {
-                var lines = devices.Select(d => d.ToString()).ToArray();
-                File.WriteAllLines(filePath, lines);
+                var lines = _devices.Select(d => d.ToString()).ToArray();
+                File.WriteAllLines(_filePath, lines);
                 Console.WriteLine("Data saved successfully.");
             }
             catch (Exception ex)

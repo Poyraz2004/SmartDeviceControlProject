@@ -1,5 +1,3 @@
-namespace SmartDeviceControl.Models;
-
 public class Device
 {
     public string Name { get; set; }
