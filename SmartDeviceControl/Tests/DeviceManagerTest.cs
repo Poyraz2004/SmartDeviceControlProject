@@ -1,10 +1,9 @@
-using System;
-using System.IO;
+
 using NUnit.Framework;
 using NUnit.Framework.Legacy;
 using SmartDeviceControl.Managers;
 using SmartDeviceControl.Models;
-using SmartDeviceControl.Exceptions;
+
 
 namespace SmartDeviceControl.Tests
 {

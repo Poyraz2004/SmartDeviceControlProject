@@ -123,7 +123,7 @@ namespace SmartDeviceControl.Managers
         /// <summary>
         /// Turns off a device by its ID.
         /// </summary>
-        /// <param name="id">The ID of the device to turn off.</param>
+        /// <param name="id">ID of the device to turn off.</param>
         public void TurnOffDevice(string id)
         {
             var device = _devices.FirstOrDefault(d => d.Id == id);

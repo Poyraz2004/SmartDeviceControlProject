@@ -1,5 +1,5 @@
 using SmartDeviceControl.Models;
-using SmartDeviceControl.Exceptions;
+
 
 namespace SmartDeviceControl
 {
