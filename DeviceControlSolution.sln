@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeviceControl.API", "DeviceControl.API\DeviceControl.API.csproj", "{74C7A3CD-83B3-436F-9A84-E500D9A23C47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeviceControl.Entities", "DeviceControl.Entities\DeviceControl.Entities.csproj", "{DF788048-AB72-43C0-98EF-E24B24BEB8C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeviceControl.DataAccess", " DeviceControl.DataAccess\DeviceControl.DataAccess.csproj", "{11CA3148-58AC-43D2-8C91-8359E133D094}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74C7A3CD-83B3-436F-9A84-E500D9A23C47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74C7A3CD-83B3-436F-9A84-E500D9A23C47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74C7A3CD-83B3-436F-9A84-E500D9A23C47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74C7A3CD-83B3-436F-9A84-E500D9A23C47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF788048-AB72-43C0-98EF-E24B24BEB8C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF788048-AB72-43C0-98EF-E24B24BEB8C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF788048-AB72-43C0-98EF-E24B24BEB8C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF788048-AB72-43C0-98EF-E24B24BEB8C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11CA3148-58AC-43D2-8C91-8359E133D094}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11CA3148-58AC-43D2-8C91-8359E133D094}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11CA3148-58AC-43D2-8C91-8359E133D094}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11CA3148-58AC-43D2-8C91-8359E133D094}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

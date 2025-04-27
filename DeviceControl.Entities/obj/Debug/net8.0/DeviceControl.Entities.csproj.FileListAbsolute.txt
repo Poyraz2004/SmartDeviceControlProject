@@ -1,0 +1,11 @@
+C:\Users\ASUS\RiderProjects\DeviceControlSolution\DeviceControl.Entities\bin\Debug\net8.0\DeviceControl.Entities.deps.json
+C:\Users\ASUS\RiderProjects\DeviceControlSolution\DeviceControl.Entities\bin\Debug\net8.0\DeviceControl.Entities.dll
+C:\Users\ASUS\RiderProjects\DeviceControlSolution\DeviceControl.Entities\bin\Debug\net8.0\DeviceControl.Entities.pdb
+C:\Users\ASUS\RiderProjects\DeviceControlSolution\DeviceControl.Entities\obj\Debug\net8.0\DeviceControl.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\RiderProjects\DeviceControlSolution\DeviceControl.Entities\obj\Debug\net8.0\DeviceControl.Entities.AssemblyInfoInputs.cache
+C:\Users\ASUS\RiderProjects\DeviceControlSolution\DeviceControl.Entities\obj\Debug\net8.0\DeviceControl.Entities.AssemblyInfo.cs
+C:\Users\ASUS\RiderProjects\DeviceControlSolution\DeviceControl.Entities\obj\Debug\net8.0\DeviceControl.Entities.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\RiderProjects\DeviceControlSolution\DeviceControl.Entities\obj\Debug\net8.0\DeviceControl.Entities.dll
+C:\Users\ASUS\RiderProjects\DeviceControlSolution\DeviceControl.Entities\obj\Debug\net8.0\refint\DeviceControl.Entities.dll
+C:\Users\ASUS\RiderProjects\DeviceControlSolution\DeviceControl.Entities\obj\Debug\net8.0\DeviceControl.Entities.pdb
+C:\Users\ASUS\RiderProjects\DeviceControlSolution\DeviceControl.Entities\obj\Debug\net8.0\ref\DeviceControl.Entities.dll

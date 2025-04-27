@@ -1,0 +1,15 @@
+C:\Users\ASUS\RiderProjects\DeviceControlSolution\ DeviceControl.DataAccess\bin\Debug\net8.0\DeviceControl.DataAccess.deps.json
+C:\Users\ASUS\RiderProjects\DeviceControlSolution\ DeviceControl.DataAccess\bin\Debug\net8.0\DeviceControl.DataAccess.dll
+C:\Users\ASUS\RiderProjects\DeviceControlSolution\ DeviceControl.DataAccess\bin\Debug\net8.0\DeviceControl.DataAccess.pdb
+C:\Users\ASUS\RiderProjects\DeviceControlSolution\ DeviceControl.DataAccess\bin\Debug\net8.0\DeviceControl.Entities.dll
+C:\Users\ASUS\RiderProjects\DeviceControlSolution\ DeviceControl.DataAccess\bin\Debug\net8.0\DeviceControl.Entities.pdb
+C:\Users\ASUS\RiderProjects\DeviceControlSolution\ DeviceControl.DataAccess\obj\Debug\net8.0\DeviceControl.DataAccess.csproj.AssemblyReference.cache
+C:\Users\ASUS\RiderProjects\DeviceControlSolution\ DeviceControl.DataAccess\obj\Debug\net8.0\DeviceControl.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\RiderProjects\DeviceControlSolution\ DeviceControl.DataAccess\obj\Debug\net8.0\DeviceControl.DataAccess.AssemblyInfoInputs.cache
+C:\Users\ASUS\RiderProjects\DeviceControlSolution\ DeviceControl.DataAccess\obj\Debug\net8.0\DeviceControl.DataAccess.AssemblyInfo.cs
+C:\Users\ASUS\RiderProjects\DeviceControlSolution\ DeviceControl.DataAccess\obj\Debug\net8.0\DeviceControl.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\RiderProjects\DeviceControlSolution\ DeviceControl.DataAccess\obj\Debug\net8.0\DeviceCo.DB3446B7.Up2Date
+C:\Users\ASUS\RiderProjects\DeviceControlSolution\ DeviceControl.DataAccess\obj\Debug\net8.0\DeviceControl.DataAccess.dll
+C:\Users\ASUS\RiderProjects\DeviceControlSolution\ DeviceControl.DataAccess\obj\Debug\net8.0\refint\DeviceControl.DataAccess.dll
+C:\Users\ASUS\RiderProjects\DeviceControlSolution\ DeviceControl.DataAccess\obj\Debug\net8.0\DeviceControl.DataAccess.pdb
+C:\Users\ASUS\RiderProjects\DeviceControlSolution\ DeviceControl.DataAccess\obj\Debug\net8.0\ref\DeviceControl.DataAccess.dll

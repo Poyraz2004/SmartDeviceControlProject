@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "cGYYuMYd6RKyCYUdk6eA138aN3qw5PBkkaZxESYQ4f4=",
+  "Source": "DeviceControl.API",
+  "BasePath": "_content/DeviceControl.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
